@@ -35,10 +35,10 @@ def others_markup(videoid, user_id):
         ],
         [
             InlineKeyboardButton(
-                text="⇩ ᴜɴᴅᴜʜ ᴀᴜᴅɪᴏ", callback_data=f"gets audio|{videoid}|{user_id}"
+                text=" ᴜɴᴅᴜʜ ᴀᴜᴅɪᴏ", callback_data=f"gets audio|{videoid}|{user_id}"
             ),
             InlineKeyboardButton(
-                text="⇩ ᴜɴᴅᴜʜ ᴠɪᴅᴇᴏ", callback_data=f"gets video|{videoid}|{user_id}"
+                text=" ᴜɴᴅᴜʜ ᴠɪᴅᴇᴏ", callback_data=f"gets video|{videoid}|{user_id}"
             ),
         ],
         [
@@ -371,7 +371,7 @@ def setting_markup():
             InlineKeyboardButton(text="✖️ ᴄʟᴏsᴇ", callback_data="close"),
         ],
     ]
-    return f"🔧  **{BOT_NAME} Settings**", buttons
+    return f"⚙️  **{BOT_NAME} Settings**", buttons
 
 
 def volmarkup():
