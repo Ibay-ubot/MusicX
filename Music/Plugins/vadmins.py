@@ -20,7 +20,7 @@ bttn = InlineKeyboardMarkup(
 )
 
 
-bcl = InlineKeyboardMarkup([[InlineKeyboardButton("ᴛᴜᴛᴜᴘ", callback_data="cls")]])
+bcl = InlineKeyboardMarkup([[InlineKeyboardButton("Tutup", callback_data="cls")]])
 
 
 @Client.on_callback_query(filters.regex("cbmenu"))
