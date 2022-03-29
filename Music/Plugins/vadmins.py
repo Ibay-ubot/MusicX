@@ -16,7 +16,7 @@ from Music.MusicUtilities.tgcallsrun.video import skip_current_song, skip_item
 
 
 bttn = InlineKeyboardMarkup(
-    [[InlineKeyboardButton("ᴋᴇᴍʙᴀʟɪ", callback_data="cbmenu")]]
+    [[InlineKeyboardButton("Kembali", callback_data="cbmenu")]]
 )
 
 
@@ -36,19 +36,19 @@ async def cbmenu(_, query: CallbackQuery):
             show_alert=True,
         )
     await query.edit_message_text(
-        f"⚙️ **Pengaturan dari** {query.message.chat.title}\n\nII : Jeda Streaming\n▷ : Lanjutkan Streaming\n🔇 : Bisukan Assistant\n🔊 : Bunyikan Assistant\n▢ : Hentikan Streaming",
+        f"⚙️ **Pengaturan dari** {query.message.chat.title}\n\nII : Jeda Streaming\n▶️ : Lanjutkan Streaming\n🔇 : Bisukan Assistant\n🔊 : Bunyikan Assistant\n⏹️ : Hentikan Streaming",
         reply_markup=InlineKeyboardMarkup(
             [
                 [
-                    InlineKeyboardButton("▢", callback_data="cbstop"),
-                    InlineKeyboardButton("II", callback_data="cbpause"),
-                    InlineKeyboardButton("▷", callback_data="cbresume"),
+                    InlineKeyboardButton("⏹️", callback_data="cbstop"),
+                    InlineKeyboardButton("⏸️", callback_data="cbpause"),
+                    InlineKeyboardButton("▶️", callback_data="cbresume"),
                 ],
                 [
                     InlineKeyboardButton("🔇", callback_data="cbmute"),
                     InlineKeyboardButton("🔊", callback_data="cbunmute"),
                 ],
-                [InlineKeyboardButton("ᴛᴜᴛᴜᴘ", callback_data="cls")],
+                [InlineKeyboardButton("Tutup", callback_data="cls")],
             ]
         ),
     )
@@ -142,7 +142,7 @@ async def pause(client, m: Message):
         try:
             await call_py.pause_stream(chat_id)
             await m.reply(
-                "II **Video dijeda.**\n\n• **Untuk melanjutkan video, gunakan Perintah** » /vresume"
+                "⏸️ **Video dijeda.**\n\n• **Untuk melanjutkan video, gunakan Perintah** » /vresume"
             )
         except Exception as e:
             await m.reply(f"**Error:**\n\n`{e}`")
@@ -158,7 +158,7 @@ async def resume(client, m: Message):
         try:
             await call_py.resume_stream(chat_id)
             await m.reply(
-                "▷ **Video dilanjutkan.**\n\n• **Untuk menjeda video, gunakan Perintah** » /vpause"
+                "▶️ **Video dilanjutkan.**\n\n• **Untuk menjeda video, gunakan Perintah** » /vpause"
             )
         except Exception as e:
             await m.reply(f"**Error:**\n\n`{e}`")
@@ -238,7 +238,7 @@ async def cbresume(_, query: CallbackQuery):
         try:
             await call_py.resume_stream(chat_id)
             await query.edit_message_text(
-                "▷ Streaming telah dilanjutkan", reply_markup=bttn
+                "▶️ Streaming telah dilanjutkan", reply_markup=bttn
             )
         except Exception as e:
             await query.edit_message_text(f"**Error:**\n\n`{e}`", reply_markup=bcl)
