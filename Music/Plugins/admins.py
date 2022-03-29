@@ -117,7 +117,7 @@ async def pause_cmd(_, message):
         return await message.reply_text("Saya tidak berpikir jika ada sesuatu yang diputar di obrolan suara")   
     await music_off(chat_id)
     await music.pytgcalls.pause_stream(chat_id)
-    await message.reply_text(f"🎧 Obrolan Suara Dijeda oleh {checking}!")
+    await message.reply_text(f"**✅ Music telah terputus dari obrolan suara**")
     
 @app.on_message(filters.command(["resume", f"resume@{BOT_USERNAME}", "rs"]))
 async def stop_cmd(_, message): 
@@ -136,7 +136,7 @@ async def stop_cmd(_, message):
     else:
         await music_on(chat_id)
         await music.pytgcalls.resume_stream(chat_id)
-        await message.reply_text(f"**🎧 Obrolan Suara Dilanjutkan Oleh {checking}!**")
+        await message.reply_text(f"**✅ Obrolan Suara Dilanjutkan Oleh {checking}!**")
 
 @app.on_message(filters.command(["end", f"end@{BOT_USERNAME}", "e"]))
 async def stop_cmd(_, message): 
@@ -155,7 +155,7 @@ async def stop_cmd(_, message):
             pass                        
         await remove_active_chat(chat_id)
         await music.pytgcalls.leave_group_call(chat_id)
-        await message.reply_text(f"**🎧 Obrolan Suara Berakhir/Dihentikan {checking}!**") 
+        await message.reply_text(f"**✅ Obrolan Suara Berakhir/Dihentikan {checking}!**") 
     else:
         return await message.reply_text("Saya tidak berpikir jika ada sesuatu yang diputar di obrolan suara")
     
@@ -310,5 +310,5 @@ async def reload(_, message):
     chat_id = message.chat.id
     await _.send_message(
     chat_id,
-    "✅ Bot dimulai ulang **berhasil**\n\n✅ **Admin** daftar telah **diperbarui**"
+    "✅ Bot berhasil dimulai **ulang**\n\n✅ **Daftar** admin telah **diperbarui**"
 )
