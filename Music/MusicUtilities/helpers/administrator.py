@@ -14,7 +14,7 @@ async def authorised(message):
 async def unauthorised(message: Message):
     chatID = message.chat.id
     text = (
-        "Anda tidak memiliki hak untuk melakukan perintah ini."
+        "Anda tidak memiliki izin untuk melakukan perintah ini."
         + f"\nPerintah ini hanya berlaku untuk admin grup "
     )
     try:
