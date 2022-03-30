@@ -330,7 +330,7 @@ Jadikan saya admin dengan beberapa izin✅
             else file_name,
         )
         title = "Audio Yang Dipilih Dari Telegram"
-        link = "https://t.me/NastyProject"
+        link = "https://t.me/kiyanaachannel"
         thumb = "cache/Audio.png"
         videoid = "smex1"
     elif url:
