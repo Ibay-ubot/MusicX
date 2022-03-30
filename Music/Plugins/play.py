@@ -457,7 +457,7 @@ Jadikan saya admin dengan beberapa izin✅
         what = "Query Given"
         await LOG_CHAT(message, what)
         query = message.text.split(None, 1)[1]
-        mystic = await message.reply_text("**🔎 Pencarian**")
+        mystic = await message.reply_text("**🔍 Searching**")
         try:
             a = VideosSearch(query, limit=5)
             result = (a.result()).get("result")
