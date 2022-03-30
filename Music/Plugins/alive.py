@@ -42,7 +42,7 @@ async def _human_time_duration(seconds):
     return ', '.join(parts)
 
 
-KYY_IMG = "https://telegra.ph/file/1f90ea75397fe12e6b5d2.jpg"
+Ibay_ubot = "https://telegra.ph/file/d8bf565f60d326e4fa6e8.jpg"
 
 
 @app.on_message(filters.command(["alive", "alive@Tg_Vc_00_Bot"]))
@@ -51,7 +51,7 @@ async def alive(client, message):
     uptime_sec = (current_time - START_TIME).total_seconds()
     uptime = await _human_time_duration(int(uptime_sec))
     await client.send_photo(message.chat.id,
-        photo=f"{KYY_IMG}",
+        photo=f"{Ibay_ubot}",
         caption=f"""**Holla {message.from_user.mention()}.** \n
 ✰ **I'm Working Properly** \n
 ✰ **Uptime : `{uptime}`** \n
@@ -63,10 +63,10 @@ async def alive(client, message):
             [
                 [
                     InlineKeyboardButton(
-                        "sᴜᴘᴘᴏʀᴛ", url=f"t.me/{GROUP}"
+                        "Support", url=f"t.me/kiyanasupport"
                     ),
                     InlineKeyboardButton(
-                        "ᴜᴘᴅᴀᴛᴇs", url=f"t.me/{CHANNEL}"
+                        "Updates", url=f"t.me/kiyanaachannel"
                     )
                 ]
             ]
